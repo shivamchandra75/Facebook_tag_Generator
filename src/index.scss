@@ -1,0 +1,21 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding-inline: 1rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+.app {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 2rem;
+}
