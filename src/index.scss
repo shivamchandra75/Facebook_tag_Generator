@@ -8,8 +8,10 @@
 }
 
 :root {
-  --clr-primary: hsl(0, 6%, 95%);
-  --clr-secondary: hsl(0, 0%, 10%);
+  --clr-primary: hsl(0, 0%, 93%);
+  --clr-secondary: hsl(217, 100%, 41%);
+  --clr-icon: hsl(218, 3%, 41%);
+  --clr-font: hsl(0, 0%, 10%);
   --border-radius: 0.5rem;
 }
 
@@ -18,6 +20,15 @@ svg {
   display: block;
   width: 100%;
   height: 100%;
+  color: var(--clr-icon);
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
+
+input[type="text"]:focus .input-container {
+  border-color: var(--clr-secondary);
 }
 
 body {
@@ -25,14 +36,12 @@ body {
   padding-top: 1rem;
   font-family: "Inter";
   background-color: var(--clr-primary);
-  color: var(--clr-secondary);
+  color: var(--clr-font);
 }
 
-h1,
-h2,
-h3,
-h4 {
+h1 {
   text-align: center;
+  font-size: clamp(1rem, 3vw + 1rem, 8rem);
 }
 
 .app {
@@ -46,7 +55,7 @@ h4 {
   grid-auto-flow: column;
   grid-template-columns: 1fr auto;
   gap: 0.5rem;
-  border: 1px solid var(--clr-secondary);
+  border: 1px solid var(--clr-font);
   padding-inline: 1rem;
   padding-block: 0.5rem;
   border-radius: var(--border-radius);
@@ -54,9 +63,9 @@ h4 {
 
 .input {
   border: none;
-  border-right: 1px solid var(--clr-secondary);
+  border-right: 1px solid var(--clr-font);
   background-color: inherit;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .clear-btn {
@@ -72,4 +81,5 @@ h4 {
   color: var(--clr-primary);
   border-radius: var(--border-radius);
   border: none;
+  padding-block: 1rem;
 }

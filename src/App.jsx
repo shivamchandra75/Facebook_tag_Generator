@@ -13,15 +13,18 @@ function App() {
 
   function handleDelete() {
     setTag("");
+    inputRef.current.focus();
   }
 
   function handleClick() {
     const tagGroup = inputRef.current.value;
+    if (tagGroup.length === 0) return;
+
     const keywords = tagGroup.split("#");
     keywords.shift();
+
     const mainKeyword = keywords.shift();
     const mainTag = "#".concat("", mainKeyword).trim();
-    // console.log("🥶", mainTag, "🥶");
 
     const tags = keywords.map((word) => {
       const hash = "#";
@@ -52,7 +55,7 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Sant Rampal Ji Maharaj Ji Ki Jay</h1>
+      <h1>🙏SATGURU DEV KI JAY🙏</h1>
       <div className="input-container">
         <input
           ref={inputRef}
