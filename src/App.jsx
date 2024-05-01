@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./index.scss";
 import { useRef } from "react";
+import CrossIcon from "./assets/CrossIcon";
 
 function App() {
   const [tag, setTag] = useState("");
@@ -8,6 +9,10 @@ function App() {
 
   function handleChange(e) {
     setTag(e.target.value);
+  }
+
+  function handleDelete() {
+    setTag("");
   }
 
   function handleClick() {
@@ -47,15 +52,21 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Sant Rampal Ji Bhagwaan Ji Ki Jay</h1>
-      <input
-        ref={inputRef}
-        type="text"
-        value={tag}
-        onChange={(e) => handleChange(e)}
-      />
-      <button className="generate" onClick={handleClick}>
-        Tag
+      <h1>Sant Rampal Ji Maharaj Ji Ki Jay</h1>
+      <div className="input-container">
+        <input
+          ref={inputRef}
+          type="text"
+          value={tag}
+          onChange={(e) => handleChange(e)}
+          className="input"
+        />
+        <button className="clear-btn" onClick={handleDelete}>
+          <CrossIcon />
+        </button>
+      </div>
+      <button className="generate-btn" onClick={handleClick}>
+        Make Tag
       </button>
     </div>
   );
